@@ -9,7 +9,7 @@ Summary:	An object-oriented interface to Musepack file information and APE tag f
 #Summary(pl.UTF-8):	
 Name:		perl-Audio-Musepack
 Version:	0.7
-Release:	0.1
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
