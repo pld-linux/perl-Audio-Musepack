@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Audio
 %define	pnam	Musepack
-Summary:	An object-oriented interface to Musepack file information and APE tag fields, implemented entirely in Perl.
-#Summary(pl.UTF-8):	
+Summary:	An OO interface to Musepack file information and APE tag fields, implemented in pure Perl
+Summary(pl.UTF-8):	Czysto perlowy interfejs obiektowy do informacji o plikach Musepack i znaczników APE
 Name:		perl-Audio-Musepack
 Version:	0.7
 Release:	1
@@ -15,8 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Audio/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a22b8426cae9f7c5006d5ee8fd780d5a
-# generic URL, check or change before uncommenting
-#URL:		http://search.cpan.org/dist/Audio-Musepack/
+URL:		http://search.cpan.org/dist/Audio-Musepack/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -26,35 +25,14 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module returns a hash containing basic information about a Musepack
-file, as well as tag information contained in the Musepack file's APE tags.
-See Audio::APETags for more information about the tags.
+This module returns a hash containing basic information about a
+Musepack file, as well as tag information contained in the Musepack
+file's APE tags.
 
-The information returned by Audio::Musepack->info is keyed by:
-
-	streamVersion
-	channels
-	totalFrames
-	profile
-	sampleFreq
-	lastValidSamples
-	encoder
-
-Information stored in the main hash that relates to the file itself or is
-calculated from some of the information fields is keyed by:
-
-	trackLengthMinutes      : minutes field of track length
-	trackLengthSeconds      : seconds field of track length
-	trackLengthFrames       : frames field of track length (base 75)
-	trackTotalLengthSeconds : total length of track in fractional seconds
-	bitRate                 : average bits per second of file
-	fileSize                : file size, in bytes
-	filename                : filename with path
-
-
-
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Ten moduł zwraca hasza zawierającego podstawowe informacje o pliku
+Musepack, a także informacje o znacznikach APE zawartych w pliku
+Musepack.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
