@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Audio
 %define	pnam	Musepack
 Summary:	An OO interface to Musepack file information and APE tag fields, implemented in pure Perl
